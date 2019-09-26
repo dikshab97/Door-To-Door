@@ -1,0 +1,40 @@
+      
+    <form >
+      <div class="container">
+        <div class="signup">Sign up</div>
+        
+        <div class="signup-form">
+    
+        <input required ngModel #name="ngModel" type="text" placeholder="FullName" class="input" name="name">
+        <div class="alert alert-danger" *ngIf="name.touched && !name.valid">This Field is requird</div><br>
+        
+          
+        
+        <input required ngModel #email="ngModel" type="text" placeholder="Email" class="input" name="email" email="true">
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Valid Email is required</div><br>        
+  
+        <textarea required ngModel #add="ngModel" type="text" placeholder="Address" class="input" name="add"></textarea>
+        <div class="alert alert-danger" *ngIf="add.touched && !add.valid">This Field is requird</div><br>
+  
+        <input required  ngModel #contact="ngModel" type="number" placeholder="Contact" class="input" name="contact">
+        <div class="alert alert-danger" *ngIf="contact.touched && !contact.valid">
+        <div *ngIf="contact.errors.required">This Field is required</div>
+        
+        </div>
+  
+        <input required maxlength="5" ngModel #pass="ngModel" type="password" placeholder="Password" class="input" name="pass">
+        <div class="alert alert-danger" *ngIf="pass.touched && !pass.valid">
+        <div *ngIf="pass.errors.required">Ths Field is required</div>
+        <div *ngIf="pass.errors.maxlength">Password should be maximum 5 digit</div>
+        </div>
+  
+        <div class="btn">Register</div>
+    </div>
+    <div class="form-group form-button">
+          <a routerLink="/worker-form">Go to login</a>
+      </div>
+  
+      
+    </div>
+  </form>
+       

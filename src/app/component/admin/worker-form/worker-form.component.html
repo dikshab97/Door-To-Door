@@ -1,0 +1,91 @@
+
+<div class="row">
+  <div class="col-md-6">
+  <form >
+
+      <div class="container">
+        <div class="workerform">Worker Information Form</div>
+        <div class="worker-form">
+        <div class="form-group">
+
+          <label for="namew">Name</label>
+          <input required #namew="ngModel" ngModel name="namew" id="namew" class="form-control" type="text">
+        <div class="alert alert-danger" *ngIf="namew.touched && !namew.valid">Name is required</div>
+      </div>
+    
+      <div class="form-group">
+          <label for="emailworker">Email</label>
+          <input required #emailworker="ngModel" ngModel  name="emailworker" id="emailworker" class="form-control" type="email"  email="true">
+          <div class="alert alert-danger" *ngIf="emailworker.touched && !emailworker.valid">Valid Email required</div>
+          </div>
+         
+        <div class="form-group">
+          <label for="contactworker">Contact</label>
+          <input required #contactworker="ngModel" ngModel  name="contactworker" id="contactworker" class="form-control"type="number">
+          <div class="alert alert-danger" *ngIf="contactworker.touched && !contactworker.valid">Contact  is required</div>
+        </div> 
+  
+        <div class="form-group">
+            <label for="dobworker">DOB</label>
+            <input required #dobworker="ngModel" ngModel  name="dobworker" id="dobtworker" class="form-control"type="Date">
+            <div class="alert alert-danger" *ngIf="dobworker.touched && !dobworker.valid">DOB is required</div>
+          </div> 
+    
+    
+        <div class="form-group">
+        <label for="work">Specialization</label>
+        <select #work="ngModel" ngModel name="work" id="work" class="form-control">
+        <option value="Plumber">Plumber</option>
+        <option value="Carpenter">Carpenter</option>
+        <option value="Electrician">Electrician</option>
+        <option value="Movers And Packers">Movers And Packers</option>
+        <option value="Tailor">Tailor</option>
+        <option value="Saree Saler">Saree Saler</option>
+    </select>
+    </div>
+          <div class="form-group">
+              <label for="region">region</label>
+              <input required #region="ngModel" ngModel name="region" id="region" type="text" class="form-control">
+            <div class="alert alert-danger" *ngIf="region.touched && !region.valid">Region  is required</div>
+          </div>
+        
+           
+         
+           <div class="form-group">
+              <label for="passworker">Password</label>
+              <input required #passworker="ngModel" ngModel name="passworker" id="passworker" type="password" class="form-control">
+            <div class="alert alert-danger" *ngIf="passworker.touched && !passworker.valid">Name is required</div>
+            
+            </div>
+  
+      
+          <div class="form-group">
+              <label for="imageUrl">Image URL</label>
+              <input  required #imageUrl="ngModel" ngModel name="imageUrl" id="imageUrl" type="text" class="form-control">
+            <div class="alert alert-danger" *ngIf="imageUrl.touched && !imageUrl.valid">Name is required</div>
+          </div><br>
+           
+            
+          
+         <div class="btn">ADD Worker</div>
+        
+     
+    </div>
+     </div>
+    </form>
+  </div>
+
+  <div class="col-md-6">
+  <div class="container">
+      <div class="card" style="width: 18rem;">
+          <img [src]="imageUrl.value" class="card-img-top" >
+          <div class="card-body">
+            <h5 class="card-title">Name: {{namew.value}}</h5>
+            <p class="card-text">Specialization:  {{work.value}}</p>
+            <p class="card-text">Available Region:  {{region.value}}</p>
+            
+        </div>
+          </div>
+        </div>
+  </div>
+</div>
